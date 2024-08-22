@@ -1,0 +1,10 @@
+/* src/App.css */
+.app-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  color: #333;
+  font-size: 2rem;
+}
