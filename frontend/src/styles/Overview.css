@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Dashboard Container */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Side Navigation Bar */
+.side-nav {
+  width: 280px; /* Adjusted width for better fit */
+  background-color: #3e00a6; /* Slightly different color for variation */
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+/* Logo Text */
+.logo-text h1 {
+  font-style: italic;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 45px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 75px;
+}
+
+/* Side Nav Buttons */
+.side-nav button {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 15px 20px; /* Adjusted padding for better button-like appearance */
+  color: #ffffff; /* Changed text color for better contrast */
+  font-size: 20px; /* Slightly smaller font size for better fit */
+  margin-bottom: 20px; /* Reduced bottom margin */
+  background-color: #5a0e9a; /* Darker background color for the button */
+  border: none; /* Remove default border */
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.side-nav button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Main Content */
+.main-content {
+  flex:auto;
+  width: 1208px;
+  margin-left: 300px; /* Account for the fixed side-nav width */
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto; /* Enables scrolling within the main content */
+}
+
+/* Welcome Section */
+.welcome-section {
+  display: flex;
+  justify-content: space-between; /* Space out the welcome text and any additional content */
+  align-items: center; /* Vertically center the content */
+  background-color: #F3F4F6; /* Light background to distinguish the section */
+  padding: 30px 40px; /* Add padding for spacing */
+  border-radius: 20px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+  font-size: 42px; /* Slightly reduced font size for better balance */
+  color: #4C00B4; /* Dark purple for a bold look */
+  font-weight: bold; /* Make the text stand out */
+  margin: 0; /* Remove default margin */
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card Style */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(90, 14, 154, 0.2); /* More pronounced shadow with purple tint */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure content is spaced nicely */
+  height: auto; /* Set to auto for dynamic content fitting */
+  min-height: 220px; /* Slightly increased minimum height */
+  border: 3px solid #5a0e9a; /* Solid purple border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px); /* Lifts the card slightly on hover */
+  box-shadow: 0 10px 25px rgba(90, 14, 154, 0.3); /* Deeper shadow on hover */
+}
+
+/* Image Styling */
+.card img {
+  width: 120px; /* Adjusted width for balance */
+  height: auto; /* Auto height to maintain aspect ratio */
+  margin-right: 20px;
+  border-radius: 10px; /* Adds a slight roundness to the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the image */
+}
+
+/* Card Content */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns text to the right */
+  text-align: left; /* Ensures text is left-aligned */
+  padding-right: 70px; /* Adds a bit of padding to give space between text and the card edge */
+}
+
+/* Card Title */
+.card-content h3 {
+  font-size: 24px;
+  color: #4C00B4; /* Darker purple for titles */
+  margin-bottom: 5px;
+}
+
+/* Card Content Paragraph */
+.card-content p {
+  font-size: 18px; /* Font size for the paragraph text */
+  color: #2c3e50; /* Darker color for better readability */
+  margin-top: 10px; /* Space above the paragraph */
+  margin-bottom: 10px; /* Space below the paragraph */
+}
+
+/* Optional: Add some padding to the input fields for better UX */
+.card-content input {
+  padding: 8px; /* Padding inside the input fields */
+  border: 1px solid #ddd; /* Border around the input fields */
+  border-radius: 5px; /* Rounded corners for the input fields */
+  font-size: 16px; /* Font size for input text */
+  width: 100%; /* Full width to match card content */
+}
+
+/* Style the input placeholder text */
+.card-content input::placeholder {
+  color: #7f8c8d; /* Color for placeholder text */
+  font-size: 14px; /* Font size for placeholder text */
+}
