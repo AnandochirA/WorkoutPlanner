@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                          // or "ESNext" depending on your target environment
+      "module": "commonjs",                     // or "ESNext" if you're using ES modules
+      "strict": true,                           // Enables strict type-checking options
+      "esModuleInterop": true,                  // Ensures interoperability with CommonJS modules
+      "moduleResolution": "node",               // Resolve modules in the node_modules directory
+      "skipLibCheck": true,                     // Skip type checking of declaration files in node_modules
+      "resolveJsonModule": true,                // Allow importing JSON files
+      "outDir": "./dist",                       // Output directory for compiled JS files
+      "rootDir": "./src",                       // Root directory of your TypeScript files
+      "baseUrl": "./src",                       // Set the base URL for imports
+      "paths": {
+        "@config/*": ["config/*"]               // Optional: For easy aliasing of paths like config files
+      }
+    },
+    "include": ["src/**/*"],                     // Include all TS files inside the src folder
+    "exclude": ["node_modules", "dist"]          // Exclude unnecessary files
+  }
+  
