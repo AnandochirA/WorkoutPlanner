@@ -8,13 +8,18 @@ const workoutPlansCollection = collection(db, 'workoutPlans');
 
 // Create a new workout plan
 router.post('/', async (req, res) => {
-    const { userId, title, description, days } = req.body;
+    const { userId, title, description = "", days } = req.body;
+
+    // Ensure that info has valid data
+    if (!days || typeof days !== 'object') {
+        return res.status(400).json({ error: 'Invalid days field. Must be an object with exercises.' });
+    }
 
     try {
         const docRef = await addDoc(workoutPlansCollection, {
             userId,
             title,
-            description,
+            description: description || "", // Default to empty string if undefined
             days,
             createdAt: new Date(),
             updatedAt: new Date(),
@@ -24,6 +29,7 @@ router.post('/', async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 });
+
 
 // Get all workout plans for a specific user
 router.get('/:userId', async (req, res) => {
@@ -66,14 +72,14 @@ router.get('/plan/:id', async (req, res) => {
 // Update a workout plan
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { name, description, exercises } = req.body;
+    const { name, description, days } = req.body;
 
     try {
         const docRef = doc(db, 'workoutPlans', id);
         await updateDoc(docRef, {
             name,
             description,
-            exercises,
+            days,
             updatedAt: new Date(),
         });
         res.status(200).json({ message: 'Workout Plan updated successfully' });
