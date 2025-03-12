@@ -81,9 +81,3 @@ Delete a Workout Plan:
 Endpoint: /api/workouts/:id
 
 Method: DELETE
-
-Full API documentation is available in the repository.
-
-Contributions
-
-Contributions are welcome! Please fork the repository and create a pull request with your updates.
